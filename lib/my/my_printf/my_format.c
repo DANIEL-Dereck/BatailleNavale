@@ -1,13 +1,3 @@
-/*
-** my_format.c for my_printf in /home/daniel_d/rendu/PSU_2013_my_printf
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Sun Nov 17 11:32:10 2013 daniel_d
-** Last update Thu Jun 19 13:45:19 2014 daniel_d
-*/
-
 #include <stdarg.h>
 #include "../my.h"
 
@@ -23,16 +13,46 @@ void	my_formati(va_list ap)
 
 void	my_formatb(va_list ap)
 {
-  my_putnbr_base(va_arg(ap, int), "01");
+  my_putnbr_base(va_arg(ap, int), BINARY);
 }
 
 void	my_formato(va_list ap)
 {
-  my_putnbr_base(va_arg(ap, int), "01234567");
+  my_putnbr_base(va_arg(ap, int), OCTAL);
 }
 
 void	my_formatxmin(va_list ap)
 {
-  my_putnbr_base(va_arg(ap, int), "01234567899abcdef");
+  my_putnbr_base(va_arg(ap, int), HEXAMIN);
 }
 
+void    my_formatxmaj(va_list ap)
+{
+  my_putnbr_base(va_arg(ap, int), HEXAMAX);
+}
+
+void	my_formatp(va_list ap)
+{
+  my_putstr(OX);
+  my_putstr(va_arg(ap, char*));
+}
+
+void	my_formatu(va_list ap)
+{
+  my_put_nbru(va_arg(ap, unsigned int));
+}
+
+void	my_formatc(va_list ap)
+{
+  my_putchar(va_arg(ap, int));
+}
+
+void	my_formats(va_list ap)
+{
+  my_putstr(va_arg(ap, char *));
+}
+
+void	my_formatsmaj(va_list ap)
+{
+  my_putstr(va_arg(ap, char *));
+}

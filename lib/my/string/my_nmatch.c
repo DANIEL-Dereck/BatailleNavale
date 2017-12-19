@@ -1,13 +1,3 @@
-/*
-** my_nmatch.c for nmatch in /home/daniel_d/rendu
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Tue Apr 22 15:36:12 2014 daniel_d
-** Last update Thu Jun 19 13:41:04 2014 daniel_d
-*/
-
 #include <stdlib.h>
 #include "../my.h"
 

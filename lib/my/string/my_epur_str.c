@@ -1,13 +1,3 @@
-/*
-** my_epur_str.c for epur_str in /home/daniel_d/rendu/PSU_2013_minishell2/src
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Wed Mar  5 10:24:15 2014 daniel_d
-** Last update Thu Jun 19 13:41:42 2014 daniel_d
-*/
-
 #include <stdlib.h>
 #include "../my.h"
 

@@ -1,13 +1,3 @@
-/*
-** my_printf.c for my_printf in /home/daniel_d/rendu/PSU_2013_my_printf
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Thu Nov 14 14:57:17 2013 daniel_d
-** Last update Thu Jun 19 13:45:29 2014 daniel_d
-*/
-
 #include <stdarg.h>
 #include <stdlib.h>
 #include "../my.h"

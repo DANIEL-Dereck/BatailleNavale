@@ -1,13 +1,3 @@
-/*
-** my_strcmp.c for my_strcmp.c in /home/daniel_d/rendu/Piscine-C-Jour_06/ex_05
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Fri Oct 11 16:15:36 2013 daniel_d
-** Last update Thu Jun 19 13:42:34 2014 daniel_d
-*/
-
 #include <stdlib.h>
 #include "../my.h"
 

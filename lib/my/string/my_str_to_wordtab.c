@@ -1,13 +1,3 @@
-/*
-** my_str_to_wordtab.c for strtowordtab in /home/daniel_d/rendu
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Sat Jan  4 15:02:32 2014 daniel_d
-** Last update Thu Jun 19 13:43:12 2014 daniel_d
-*/
-
 #include <stdlib.h>
 #include "../my.h"
 

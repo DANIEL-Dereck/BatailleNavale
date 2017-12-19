@@ -1,13 +1,3 @@
-/*
-** my_getnbr.c for my_getnbr.c in /home/daniel_d/rendu/Piscine-C-Jour_04
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Wed Oct  9 10:24:06 2013 daniel_d
-** Last update Thu Jun 19 13:43:28 2014 daniel_d
-*/
-
 #include <stdlib.h>
 #include "../my.h"
 

@@ -1,13 +1,3 @@
-##
-## Makefile for makefile in /home/daniel_d/Name_Prog
-## 
-## Made by daniel_d
-## Login   <daniel_d@epitech.net>
-## 
-## Started on  Sun Mar  9 23:33:38 2014 daniel_d
-## Last update Fri Aug 12 10:14:48 2016 daniel_d
-##
-
 CC 	= gcc
 
 RM	= rm -f
@@ -35,16 +25,11 @@ LSRC	= lib/my/string/get_next_line.c \
 	lib/my/string/my_strlen.c \
         lib/my/string/my_str_to_wordtab.c \
         lib/my/number/my_put_nbr.c \
-        lib/my/number/my_put_nbr_rec.c \
         lib/my/number/my_putnbr_base.c \
-        lib/my/number/my_putnbr_base_rec.c \
-        lib/my/number/my_put_nbru.c \
         lib/my/number/my_getnbr.c \
 	lib/my/number/my_pow.c \
         lib/my/my_printf/my_printf.c \
         lib/my/my_printf/my_format.c \
-        lib/my/my_printf/my_format2.c \
-        lib/my/my_printf/my_format3.c \
 
 OBJ	= $(SRC:.c=.o)
 

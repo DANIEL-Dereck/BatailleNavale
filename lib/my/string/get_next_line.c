@@ -1,13 +1,3 @@
-/*
-** get_next_line.c for get_next_line in /home/daniel_d/rendu/get_next_line-2018-daniel_d
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Tue Nov 19 11:43:10 2013 daniel_d
-** Last update Thu Jun 19 13:40:50 2014 daniel_d
-*/
-
 #include <unistd.h>
 #include <stdlib.h>
 #include "../my.h"

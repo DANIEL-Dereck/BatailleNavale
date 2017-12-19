@@ -1,13 +1,3 @@
-/*
-** my_put_nbr.c for my_putnbr_base.c in /home/daniel_d/rendu/Piscine-C-Jour_03
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Wed Oct  2 18:12:11 2013 daniel_d
-** Last update Thu Jun 19 13:43:41 2014 daniel_d
-*/
-
 #include "../my.h"
 
 void    my_basewhile(int c, int d, int ba, char *base)
@@ -50,5 +40,27 @@ int     my_putnbr_base(int nb, char *base)
   c = 1;
   d = nb;
   my_basewhile(c, d, ba, base);
+  return (0);
+}
+
+int     my_putnbr_base_rec(int nb, char *base)
+{
+  int   c;
+
+  if (base == NULL)
+    return (-1);
+  c = my_strlen(base);
+  if (nb < 0)
+    {
+      my_putchar('-');
+      nb = -nb;
+    }
+  if (nb >= c)
+    {
+      my_putnbr_base_rec(nb / c, base);
+      my_putnbr_base_rec(nb % c, base);
+    }
+  else
+    my_putchar(base[c]);
   return (0);
 }
