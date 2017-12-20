@@ -11,6 +11,7 @@
 #define HEXAMAX "01234567899ABCDEF"
 #define OCTAL "01234567"
 #define OX "0x"
+#define BUFFER 2
 
 
 /* my_printf */
@@ -43,7 +44,7 @@ int     my_put_nbr_rec(int nb);
 int     my_pow(int nbr, int puissance);
 
 /* string */
-char    *add_char_in_line(char *line, char c);
+char    *add_char_in_line(char *line, char c, int buffer);
 char    *get_next_line(int fd);
 int     my_needposchar(char *str, char c);
 int     my_putstr(char *str);
@@ -61,5 +62,6 @@ int     my_c_w(char *str);
 int     my_c_c(char *str);
 char    **my_str_wordtab(char *str, int a, int b);
 char    **my_str_to_wordtab(char *str);
+int     my_needposcharAt(char *str, char c, int start);
 
 #endif

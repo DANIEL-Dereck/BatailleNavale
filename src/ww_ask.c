@@ -59,10 +59,15 @@ char ask_sens(char c)
 {
   char *tmp;
 
-  my_printf("Entrer le sens Verticale (v)/ Horizontale (h)/ : ==> ");
-  tmp = get_next_line(0);
-  c = tmp[0];
-  my_printf("\n");
+  do {
+    my_printf("Entrer :\n v) Verticale\n h) Horizontale\n : ==> ");
+    tmp = get_next_line(0);
+    c = tmp[0];
+    my_printf("\n");
+    if (c != 'h' && c != 'h') {
+      my_printf("\033[031m<=o=> Invalide Value <=o=>\033[039m\n");
+    }
+  } while (c != 'h'  && c != 'h');
   return c;
 }
 
@@ -82,7 +87,7 @@ int ask_boat_id()
     boat = my_getnbr(get_next_line(0));
     my_printf("\n");
     if (boat != ID_CORVETTE && boat != ID_DESTROYER && boat != ID_CROISEUR && boat != ID_PORTEAVION)
-      my_printf("\033[031m<=o=> Invalide Value <=o=>\033[039m\n");
+      my_printf("\033[031m<== Invalide Value ==>\033[039m\n");
   }while (boat != ID_CORVETTE && boat != ID_DESTROYER && boat != ID_CROISEUR && boat != ID_PORTEAVION);
   return boat;
 }
@@ -105,10 +110,9 @@ void ask_boat(int game[ZMAX][XMAX][YMAX], int ia)
   int verif = 0;
   int flag = 1;
 
-  my_printf("\t<=====> Placer vos bateau <=====>\n");
   do{
     aff_boat(game, 0);
-    my_printf(" <== Bateau à placer %d/%d ==>\n", nb, nb_bot);
+    my_printf("Bateau à placer %d/%d\n", nb, nb_bot);
 
     affRestant(CORVETTE, nb_corv);
     affRestant(DESTROYER, nb_dest);
@@ -119,7 +123,7 @@ void ask_boat(int game[ZMAX][XMAX][YMAX], int ia)
         (id == ID_DESTROYER && nb_dest == 0) || 
         (id == ID_CROISEUR && nb_croi == 0) ||
         (id == ID_PORTEAVION && nb_port == 0) )
-      my_printf("\t\033[031m<===> Number of boat exhaust  <===>\033[039m\n\t<===> Change boat <===>\n");
+      my_printf("\t\033[031m<== Number of boat exhaust  ==>\033[039m\n");
     else{
       do{
 	y = ask_coord(y, 'y');
@@ -138,7 +142,7 @@ void ask_boat(int game[ZMAX][XMAX][YMAX], int ia)
 	if (verif == 0)
 	  {
 	    if (((x > XMAX || x < 0) || (y > YMAX || y < 0)) && (sens != SENSV && sens != SENSH))
-	      printf("\033[031m <== ERREUR saisie coord, Try again ==> \033[39m\n");
+	      printf("\033[031m <== Coordonee invalide ==> \033[39m\n");
 	    else
 	      {
 		if (id == ID_CORVETTE)
@@ -155,8 +159,8 @@ void ask_boat(int game[ZMAX][XMAX][YMAX], int ia)
 	      }
 	  }
 	else{
-	  printf("\033[031m <== ERREUR Bateau deja present a la position demander ==>\n");
-	  printf("\t<== Try again ==>\033[039m\n");}
+	  printf("\033[031m <== Impossible to place your boat her ==>\n");
+      }
       }while(flag);
     }
     flag = 1;
@@ -167,8 +171,8 @@ void affRestant (char* boat, int nbRest)
 {
   if (nbRest != 0)
   {
-    my_printf("\033[032m\t%d * %s restant    ***\n\033[039m", nbRest, boat);    
+    my_printf("\033[032m\t%d * %s restant\n\033[039m", nbRest, boat);    
   } else {
-    my_printf("\033[031m\t%d * %s restant    ***\n\033[039m", nbRest, boat);        
+    my_printf("\033[031m\t%d * %s restant\n\033[039m", nbRest, boat);        
   }
 }

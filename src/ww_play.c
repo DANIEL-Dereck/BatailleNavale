@@ -46,7 +46,7 @@ void aff_boat(int map[ZMAX][XMAX][YMAX], int z)
   char pos = 'A';
   char pis = 'A';
 
-  my_printf("\n \t\033[032m<======= Carte Joueur %d =======>\033[039m\n  y ",z+1);
+  my_printf("\n \t\033[032m<==@==> Carte Joueur %d <==@==>\033[039m\n  y ",z+1);
   for (o = 0; o < YMAX; o++){
     my_putchar(pos++);
     my_putchar(' ');}
@@ -86,7 +86,7 @@ void aff_boat_enm(int map[ZMAX][XMAX][YMAX], int z)
   char pos = 'A';
   char pis = 'A';
 
-  my_printf("\n \t\033[032m<======= Carte Ennemie %d =======>\033[039m\n  y ",z+1);
+  my_printf("\n \t\033[032m<==@==> Carte Ennemie %d <==@==>\033[039m\n  y ",z+1);
   for (o = 0; o < YMAX; o++){
     my_putchar(pos++);
     my_putchar(' ');}
@@ -159,12 +159,12 @@ void player_play(int player, int enm, int game[ZMAX][XMAX][YMAX])
   int x = 0;
   int y = 0;
 
-  my_printf("\033[032mJoueur %d \033[039ma toi de jouer\n", player + 1);
+  my_printf("\033[032mPlayer %d \033[039ma its your turn\n", player + 1);
   aff_boat(game, player);
   aff_boat_enm(game, enm);
   do{
     if (a > 0)
-      my_printf("\033[031m ERROR : Vous avez deja jouer ici.\033[039m\n");
+      my_printf("\033[031m You have already shot her\033[039m\n");
     y = ask_coord(y, 'y');
     if (y == -42)
       {
@@ -174,7 +174,7 @@ void player_play(int player, int enm, int game[ZMAX][XMAX][YMAX])
     x = ask_coord(x, 'x');
     a++;
   }while(game[enm][x][y] < 0);
-  my_printf("Joueur %d tire en %c / %c\n",player + 1, x+'A', y+'A');
+  my_printf("Player %d attack in %c / %c\n",player + 1, x+'A', y+'A');
   if (game[enm][x][y] == 0 || game[enm][x][y] == -2)
     game[enm][x][y] = -2;
   else if (game[enm][x][y] > 0)
@@ -199,10 +199,9 @@ int check_boat(int map[ZMAX][XMAX][YMAX], int z)
 void delir_ending(int play, int count)
 {
     if (play == 1)
-      my_printf("\033[032mYou are the winner !!!\033[039m\n");
+      my_printf("\033[032mYou win !!!\033[039m\n");
     else{
-      CapRandom();
-      my_printf("\033[031m You are the looser !!!!\033[039m\n");}
+      my_printf("\033[031m You loos !!!!\033[039m\n");}
 }
 
 void play_game(int game[ZMAX][XMAX][YMAX], int nbp)
@@ -219,7 +218,7 @@ void play_game(int game[ZMAX][XMAX][YMAX], int nbp)
     if (play == 0)
       {
 	if (nbp == 1){
-	  my_printf("\n\t\033[031mJoueur %d, presse enter to play your turn\033[039m\n", play+1);
+	  my_printf("\n\t\033[031mPlayer %d, presse enter to play your turn\033[039m\n", play+1);
 	  get_next_line(0);
 	  player_play(play, enm, game);}
 	else if (nbp == 2)
@@ -233,7 +232,7 @@ void play_game(int game[ZMAX][XMAX][YMAX], int nbp)
     else if (play == 1)
       {
 	if (nbp == 1){
-	  my_printf("\n\t\033[031mJoueur %d, presse enter to play your turn\033[039m\n", play+1);
+	  my_printf("\n\t\033[031mPlayer %d, presse enter to play your turn\033[039m\n", play+1);
 	  get_next_line(0);
 	  player_play(play, enm, game);}
 	else if (nbp == 2)
@@ -258,7 +257,7 @@ int start_game(int game[ZMAX][XMAX][YMAX])
 
   if (nbp == 1){
     do{
-      my_printf("\033[032mJoueur 1\033[039m voulez vous placer vos bateau (1) ou laisser le random choisir (2) ==> ");
+      my_printf("\033[032mPlayer 1\033[039m 1) place your boat\n 2)Random\n==> ");
       uti = my_getnbr(get_next_line(0));
     }while(uti != 1 && uti != 2);
     if (uti == 1)
@@ -266,7 +265,7 @@ int start_game(int game[ZMAX][XMAX][YMAX])
     else
       place_Rboat(game, 0);
     do{
-      my_printf("\n\033[032mJoueur 2\033[039m voulez vous placer vos bateau (1) ou laisser le random choisir (2) ==> ");
+      my_printf("\n\033[032mPlayer 2\033[039m 1) place your boat\n 2)Random\n==> ");
       uti = my_getnbr(get_next_line(0));
     }while(uti != 1 && uti != 2);
     if (uti == 1)
@@ -277,8 +276,8 @@ int start_game(int game[ZMAX][XMAX][YMAX])
   else if (nbp == 2)
     {
       do{
-	my_printf("Voulez vous placer vos bateau (1) ou en random (2) ==> ");
-	uti = my_getnbr(get_next_line(0));
+        my_printf("Would you like :\n 1) place your boat\n 2)Random\n==> ");
+        uti = my_getnbr(get_next_line(0));
       }while(uti != 1 && uti != 2);
       if (uti == 1)
 	ask_boat(game, 0);

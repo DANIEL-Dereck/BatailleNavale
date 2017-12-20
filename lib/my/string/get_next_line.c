@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include "../my.h"
 
-char    *add_char_in_line(char *line, char c)
+char    *add_char_in_line(char *line, char c, int buffer)
 {
   int   i;
   char  *new_line;
 
   i = 0;
-  if ((new_line = malloc(sizeof(*new_line) * (my_strlen(line) + 2))) == NULL)
+  if ((new_line = malloc(sizeof(*new_line) * (my_strlen(line) + buffer))) == NULL)
     return (NULL);
   while (line && line[i])
     {
@@ -41,7 +41,7 @@ char    *get_next_line(int fd)
 	    line = "\0";
 	  return (line);
 	}
-      if ((line = add_char_in_line(line, c)) == NULL)
+      if ((line = add_char_in_line(line, c, BUFFER)) == NULL)
 	return (NULL);
       s = c;
     }
