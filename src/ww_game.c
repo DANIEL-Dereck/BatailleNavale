@@ -104,14 +104,14 @@ void place_Rboat(int game[ZMAX][XMAX][YMAX], int ia)
       rplus = (XMAX * YMAX * TEMPS_CHARGEMENT) + 1;
       my_printf("Boat IA placed\n");
     }
-    placeRBoat(game, NB_CORVETTE, SIZE_CORVETTE, ID_CORVETTE, CORVETTE)
-    placeRBoat(game, NB_DESTROYER, SIZE_DESTROYER, ID_DESTROYER, DESTROYER)
-    placeRBoat(game, NB_CROISEUR, SIZE_CROISEUR, ID_CROISEUR, CROISEUR)
-    placeRBoat(game, NB_PORTEAVION, SIZE_PORTEAVION, ID_PORTEAVION, PORTEAVION)
+  placeRBoat(game, NB_CORVETTE, SIZE_CORVETTE, ID_CORVETTE, CORVETTE, ia);
+  placeRBoat(game, NB_DESTROYER, SIZE_DESTROYER, ID_DESTROYER, DESTROYER, ia);
+  placeRBoat(game, NB_CROISEUR, SIZE_CROISEUR, ID_CROISEUR, CROISEUR, ia);
+  placeRBoat(game, NB_PORTEAVION, SIZE_PORTEAVION, ID_PORTEAVION, PORTEAVION, ia);
 }
 
 
-void placeRBoat(int game[ZMAX][XMAX][YMAX], int number, int size, int type, char* name) {
+void placeRBoat(int game[ZMAX][XMAX][YMAX], int number, int size, int type, char* name, int ia) {
   int x = 0;
   int y = 0;
   int a = 0;

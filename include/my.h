@@ -1,13 +1,3 @@
-/*
-** my.h for my.h in /home/daniel_d/rendu/Piscine-C-Jour_09/ex_02
-** 
-** Made by daniel_d
-** Login   <daniel_d@epitech.net>
-** 
-** Started on  Thu Oct 10 14:50:55 2013 daniel_d
-** Last update Thu Jun 19 13:25:58 2014 daniel_d
-*/
-
 #ifndef MY_H_
 # define MY_H_
 
@@ -16,11 +6,19 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+#define BINARY "01"
+#define HEXAMIN "01234567899abcdef"
+#define HEXAMAX "01234567899ABCDEF"
+#define OCTAL "01234567"
+#define OX "0x"
+#define BUFFER 2
+
+
 /* my_printf */
 void    my_printf_func(va_list ap, int f);
 char    *my_printformat(char *my_formatall);
 void    my_printf_funk(const char *format, char *my_formatall, va_list ap);
-int	my_printf(const char *format, ...);
+int	    my_printf(const char *format, ...);
 void    my_formatd(va_list ap);
 void    my_formati(va_list ap);
 void    my_formatb(va_list ap);
@@ -39,15 +37,14 @@ void    my_basewhile(int c, int d, int ba, char *base);
 int     my_putnbr_base(int nb, char *base);
 void    my_while(int a, int c, int d, int e);
 int     my_put_nbr(int nb);
-void    my_whileu(unsigned int a, unsigned int c,
-                  unsigned int d, unsigned int e);
+void    my_whileu(unsigned int a, unsigned int c, unsigned int d, unsigned int e);
 int     my_put_nbru(unsigned int nb);
 int     my_putnbr_base_rec(int nb, char *base);
 int     my_put_nbr_rec(int nb);
 int     my_pow(int nbr, int puissance);
 
 /* string */
-char    *add_char_in_line(char *line, char c);
+char    *add_char_in_line(char *line, char c, int buffer);
 char    *get_next_line(int fd);
 int     my_needposchar(char *str, char c);
 int     my_putstr(char *str);
@@ -65,5 +62,6 @@ int     my_c_w(char *str);
 int     my_c_c(char *str);
 char    **my_str_wordtab(char *str, int a, int b);
 char    **my_str_to_wordtab(char *str);
+int     my_needposcharAt(char *str, char c, int start);
 
 #endif

@@ -123,7 +123,7 @@ int VerifBoat(int game[ZMAX][XMAX][YMAX], int z, int x, int y, char sens, int si
 void place_boat(int game[ZMAX][XMAX][YMAX], int id, int ia, int x, int y, char sens);
 void place_Rboat(int game[ZMAX][XMAX][YMAX], int ia);
 void place_all(int game[ZMAX][XMAX][YMAX], int z, int x, int y, char sens, int size, int id);
-void placeRBoat(int game[ZMAX][XMAX][YMAX], int number, int size, int type, char* name);
+void placeRBoat(int game[ZMAX][XMAX][YMAX], int number, int size, int type, char* name, int ia);
 
 #endif
 
